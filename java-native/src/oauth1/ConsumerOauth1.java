@@ -1,8 +1,10 @@
-package consumer;
+package oauth1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 import oauth.signpost.OAuth;
 import oauth.signpost.OAuthConsumer;
@@ -14,11 +16,11 @@ import oauth.signpost.exception.OAuthExpectationFailedException;
 import oauth.signpost.exception.OAuthMessageSignerException;
 import oauth.signpost.exception.OAuthNotAuthorizedException;
 
-public class Consumer {
+public class ConsumerOauth1 {
 
 	private static final String CONSUMER_KEY = "your_consumer_key";
 	private static final String CONSUMER_SECRET_KEY = "your_consumer_private_key";
-
+	
 	private static final String REQUEST_TOKEN_URL = "http://www.redu.com.br/oauth/request_token";
 	private static final String ACCESS_TOKEN_URL = "http://www.redu.com.br/oauth/access_token";
 	private static final String AUTHORIZE_URL = "http://www.redu.com.br/oauth/authorize";
@@ -50,6 +52,18 @@ public class Consumer {
 
 		System.out.println("Access token: " + consumer.getToken());
 		System.out.println("Token secret: " + consumer.getTokenSecret());
+		
+		URL url  = new URL("http://www.redu.com.br/api/users/tacsio.json");
+		HttpURLConnection request = (HttpURLConnection) url.openConnection();
+		consumer.sign(request);
+		
+		request.connect();
+		System.out.println("Redu Requested");
+		System.out.println(request.getContentType());
+		System.out.println("\nResponse: \n");
+		System.out.println("Code: " + request.getResponseCode());
+		System.out.println("Response: " + request.getResponseMessage());
+		
 
 	}
 

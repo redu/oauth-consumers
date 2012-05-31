@@ -10,7 +10,7 @@ Este consumer tem o perfil de aplicação do tipo Web Application definido no [R
 
 # Uso
 
-Baixe o código da aplicaçãom, instale as dependências e migre a base de dados:
+Baixe o código da aplicação, instale as dependências e migre a base de dados:
 
 ```
 cd rails-server

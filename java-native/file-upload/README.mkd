@@ -1,0 +1,26 @@
+## Upload de arquivos utilizando Java
+
+Este exemplo mostra a criação de uma aula tipo ``Document`` a partir de um documento PDF.
+
+Em poucas palavras, uma requisição HTTP tipo POST é criada. Por se tratar de upload de arquivo, o ``Content-type`` da requisição é ``multipart/form-data``. O arquivo (``src/document_test.pdf``) é enviado no corpo da requisição.
+
+### Estutura
+
+```
+file-upload/
+├── README.mkd
+├── libs
+│   ├── Entity.java # Encapsula o conteúdo que será enviado na requisição
+│   ├── MultipartRequest.java # Requisição HTTP
+│   ├── ReduFileUploadExample.java # Main
+│   └── document_test.pdf
+└── libs
+    ├── httpcore-4.2.4.jar
+    ├── httpmime-4.2.5.jar
+    └── scribe-1.3.3.jar
+```
+
+### Depedências
+
+- Scribe 1.3.3
+- Apache HTTP Client (httpcore-4.2.4 e httpmime-4.2.5)

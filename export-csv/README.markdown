@@ -1,6 +1,6 @@
 # Consumer OAuth para o Redu
 
-Implementação de um consumer em Ruby para a API REST do [Redu]:(http://www.redu.com.br) que gera um CSV a partir dos posts do mural.
+Implementação de um consumer em Ruby para a API REST do [Redu](http://www.redu.com.br) que gera um CSV a partir dos posts do mural.
 
 - Ruby 1.9.3
 - Bundler
